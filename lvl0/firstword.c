@@ -30,5 +30,22 @@
 
 int main(int ac, char *av[])
 {
-  
+    int i;
+
+    i = 0;
+  if (ac == 2)
+  {
+    while (av[1][i] != '\0')
+    {
+        while (av[1][i] >= 9 && av[1][i] <= 13 || av[1][i] == 32)
+            i++;
+        while (av[1][i] >= 33 && av[1][i] <= 126)
+        {
+        write (1, &av[1][i], 1);
+        i++;
+        }
+        break;
+    }
+  }
+  write (1, "\n", 1);
 }
